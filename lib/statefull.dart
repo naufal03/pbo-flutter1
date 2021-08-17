@@ -20,6 +20,14 @@ class _DiceAppState extends State<DiceApp> {
     });
   }
 
+  int rightDiceNumber = 1;
+
+  void rubahDadu2() {
+    setState(() {
+      rightDiceNumber = Random().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,9 +50,9 @@ class _DiceAppState extends State<DiceApp> {
             Expanded(
               child: TextButton(
                 onPressed: () {
-                  rubahDadu();
+                  rubahDadu2();
                 },
-                child: Image.asset('images/dice$leftDiceNumber.png'),
+                child: Image.asset('images/dice$rightDiceNumber.png'),
               ),
             ),
           ],
